@@ -1,0 +1,51 @@
+{
+  "name": "3ra-entrega-proyecto-final",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "mon": "nodemon ./src/server.js",
+    "testHttp": "node ./test/httpTests.js",
+    "testAxios": "node ./test/axiosTests.js",
+    "testMocha": "node node_modules/mocha/bin/mocha.js",
+    "babel": "nodemon --exec babel-node ./src/server.js",
+    "cluster": "MODO='cluster' nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuliWalker/3ra-entrega-proyecto-final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuliWalker/3ra-entrega-proyecto-final/issues"
+  },
+  "homepage": "https://github.com/JuliWalker/3ra-entrega-proyecto-final#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bulma": "^0.9.4",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.8",
+    "nodemon": "^2.0.19",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.5.3"
+  },
+  "devDependencies": {
+    "axios": "^0.27.2",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
