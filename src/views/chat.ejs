@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="shortcut icon" href="#" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <title>Chat</title>
   </head>
   <body class="container">
@@ -19,13 +20,6 @@
       <div>
         <h3 class="fw-bold email"><%= user.email %></h1>
       </div>
-
-      <button
-      class="btn btn-success my-3"
-      onclick="location.href = '/chat/<%= user.email %>'"
-      >
-      Ver solo mis mensajes
-      </button>
 
       <div class="chat pt-4 mb-2">
         <h2 class="mb-4 mt-4">Chat</h2>
@@ -50,11 +44,11 @@
         </form>
       </div>
     </div>
-
-    <script src="/node_modules/socket.io/client-dist/socket.io.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="/src/public/chat.js></script>
     
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="/chat.js"></script>
+
   </body>
 
 </html>

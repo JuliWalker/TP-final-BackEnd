@@ -17,16 +17,4 @@ export default class chatController {
     }
   }
 
-  async getUserMessages(req, res) {
-    try {
-      const user = req.session.user;
-      if (!user) return res.redirect("/login");
-      const messages = await chatDao.listAll();
-      res.render("chat-user", { messages });
-    } catch (error) {
-      console.log(`Error al buscar los mensajes del usuario. ${error}`);
-      return res.status(500).json({ error_description: "Error del servidor." });
-    }
-  }
-
 }

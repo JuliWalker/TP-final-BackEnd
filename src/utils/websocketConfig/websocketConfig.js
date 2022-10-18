@@ -1,10 +1,11 @@
 import { MongoDBChat } from '../../persistencia/daos/chat/chatDao.js'
+const chatDao = new MongoDBChat();
 
 export default (io) => {
     io.on('connection', async (socket) => {
         console.log('nuevo cliente conectado');
       
-        io.sockets.emit('messages', await MongoDBChat.listAll());
+        io.sockets.emit('messages', await chatDao.getAll());
       
         socket.on('message', async (data) => {
           const { text, email } = data;
@@ -16,7 +17,7 @@ export default (io) => {
       
           await MongoDBChat.save(newMessage);
       
-          io.sockets.emit('messages', await MongoDBChat.listAll());
+          io.sockets.emit('messages', await chatDao.getAll());
         });
       });
 };
